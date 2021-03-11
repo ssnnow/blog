@@ -36,6 +36,7 @@ jobs:
           npm i --save hexo-wordcount -g
           npm install hexo-filter-github-emojis  -g
           npm install hexo-generator-feed  -g
+          npm install hexo-deployer-cos -g
           npm install
       - name: 4. hexo generate public files...
 
@@ -44,13 +45,8 @@ jobs:
           hexo g   
       # 部署到腾讯云        
       - name: Deploy static to Tencent CloudBase
-        id: deployStatic
-        uses: TencentCloudBase/cloudbase-action@v1
-        with:
-          secretId: ${{ secrets.SECRET_ID }}
-          secretKey: ${{ secrets.SECRET_KEY }}
-          envId: ${{ secrets.ENV_ID }}
-          staticSrcPath: ./public
+        run: |
+          hexo d           
       - name: Get the deploy result
         run: echo "Deploy to cloudbase result ${{ steps.deployStatic.outputs.deployResult }}"
 
