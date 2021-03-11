@@ -106,5 +106,5 @@ deploy:
   appId: ${{ secrets.APP_ID }}
   secretId: ${{ secrets.SECRET_ID }}
   secretKey: ${{ secrets.SECRET_KEY }}
-  bucket: ${{ secrets.ENV_ID }}
+  bucket: ${bucket}
   region: ap-hongkong
