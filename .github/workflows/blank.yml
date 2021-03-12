@@ -49,13 +49,13 @@ jobs:
         env:
           # 云开发的访问密钥 secretId 和 secretKey
           secretId: ${{secrets.SECRET_ID}}
-          secretKey: ${{secrets.SECRET_ID}}
+          secretKey: ${{secrets.SECRET_KEY}}
           # 云开发的环境id
           envId: ${{ secrets.ENV_ID }}
           # Github 项目静态文件的路径
           staticSrcPath: public
         run: |
-          echo "secretId : ${secretId}   secretKey:  ${secretKey}"      
+          hexo d --bucket=${envId} --secretId=${secretId} --secretKey=${secretKey}
       - name: Get the deploy result
         run: echo "Deploy to cloudbase result ${{ steps.deployStatic.outputs.deployResult }}"
 
