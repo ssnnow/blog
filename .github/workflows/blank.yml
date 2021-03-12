@@ -51,7 +51,7 @@ jobs:
             secretKey: ${{ secrets.SECRET_KEY }}
             bucket: ${{ secrets.ENV_ID }}
         run: |
-          echo "appid:".${appId}
+          echo "appid:".${{ env.appId }}
           hexo d           
       - name: Get the deploy result
         run: echo "Deploy to cloudbase result ${{ steps.deployStatic.outputs.deployResult }}"
