@@ -45,14 +45,16 @@ jobs:
           hexo g   
       # 部署到腾讯云        
       - name: Deploy static to Tencent CloudBase
-        env:
-            appId: ${{ secrets.APP_ID }}
-            secretId: ${{ secrets.SECRET_ID }}
-            secretKey: ${{ secrets.SECRET_KEY }}
-            bucket: ${{ secrets.ENV_ID }}
-        run: |
-          echo "appid:".${{ env.appId }}
-          hexo d           
+        id: deployStatic
+        uses: TencentCloudBase/cloudbase-action@v1
+        with:
+        	# 云开发的访问密钥 secretId 和 secretKey
+          secretId: ${{ secrets.SECRET_ID }}
+          secretKey: ${{ secrets.SECRET_KEY }}
+          # 云开发的环境id
+          envId: ${{ secrets.ENV_ID }}
+          # Github 项目静态文件的路径
+          staticSrcPath: public
       - name: Get the deploy result
         run: echo "Deploy to cloudbase result ${{ steps.deployStatic.outputs.deployResult }}"
 
