@@ -17,10 +17,10 @@
 
 # Main menu navigation
 menu:
-  # Home: /
-  # Archives: /archives
-  # Tags: /tags
-  # Categories: /categories
+   Home: /
+   Archives: /archives
+   Tags: /tags
+   Categories: /categories
   #XXX: /xxx
 
 # Favicon
@@ -90,7 +90,7 @@ fireworks: false
 
 # Analysis
 # ---------------
-baidu_analytics:
+baidu_analytics: 6797e97b8e09b75c270d83d22b2f0389
 
 google_analytics:
 
@@ -255,7 +255,7 @@ disqus:
 
 # Footer Settings
 # ---------------
-since: 2013
+since: 2021
 
 # footer_custom_text: put custom text directly or put hitokoto to fetch random texts
 
