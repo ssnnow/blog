@@ -55,7 +55,8 @@ jobs:
           # Github 项目静态文件的路径
           staticSrcPath: public
         run: |
-          echo ${{ env.secretId}} ${{ secrets.SECRET_KEY }}
+          echo "${{ env.secretId }} : ${{ secrets.SECRET_KEY }}"
+          env
       - name: Get the deploy result
         run: echo "Deploy to cloudbase result ${{ steps.deployStatic.outputs.deployResult }}"
 
