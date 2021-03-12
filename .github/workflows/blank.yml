@@ -37,6 +37,8 @@ jobs:
           npm install hexo-filter-github-emojis  -g
           npm install hexo-generator-feed  -g
           npm install hexo-deployer-cos -g
+          npm install hexo-theme-melody -g
+          npm install hexo-renderer-pug hexo-renderer-stylus -g
           npm install
       - name: 4. hexo generate public files...
 
